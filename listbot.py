@@ -27,16 +27,13 @@ class RustBot(irc.IRCClient):
     def say_channel(self, message):
         self.say(self.channel, message)
 
-def say_channel(message):
-    if factory.instance:
-        factory.instance.say_channel(message)
-        return True
-    else:
-        return False
-
 class Remote(xmlrpc.XMLRPC):
     def xmlrpc_say(self, message):
-        return say_channel(message.encode("utf-8"))
+        if factory.instance:
+            factory.instance.say_channel(message.encode("utf-8"))
+            return True
+        else:
+            return False
 
 if __name__ == '__main__':
     factory = ReconnectingClientFactory()
