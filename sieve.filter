@@ -1,0 +1,4 @@
+require ["fileinto","copy","reject","mailbox","body","envelope","date","regex","variables"];
+if header :contains ["List-ID"] "some@mailinglist.com" {
+    redirect :copy "bot@myhost.com";
+}
