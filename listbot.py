@@ -14,7 +14,6 @@ from twisted.internet.protocol import ReconnectingClientFactory
 class RustBot(irc.IRCClient):
     nickname = "botname"
     channel = "#support"
-    instance = None
    
     def signedOn(self):
         self.factory.instance = self
