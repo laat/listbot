@@ -1,6 +1,6 @@
+requires twisted: http://www.twistedmatrix.com/
+
 Start listbot.py
 
 the .forward file runs the mail_parse script on new mails, and sends the
-subjects to the irc-bot
-
-the code is mostly self explanatory
+subjects to the irc-bot. The .forward is tested with sendmail
